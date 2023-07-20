@@ -23,7 +23,10 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(useMaterial3: true, primaryColor: AppColor.yellow),
+        theme: ThemeData(
+            useMaterial3: true,
+            primaryColor: AppColor.yellow,
+            scaffoldBackgroundColor: AppColor.yellow),
         home: const SplashScreen(),
         onGenerateRoute: RouteGenerator.generateRoute,
       ),

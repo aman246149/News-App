@@ -20,7 +20,6 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.yellow,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -70,7 +69,7 @@ class _SearchScreenState extends State<SearchScreen> {
             _debounceTimer!.cancel();
           }
           _debounceTimer = Timer(const Duration(milliseconds: 500), () {
-            context.read<NewsViewModel>().fetchEveryThing(value);
+            context.read<NewsViewModel>().fetchEveryThing(value, context);
           });
         },
       ),

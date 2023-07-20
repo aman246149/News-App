@@ -10,16 +10,20 @@ class ApiClient {
       {Map<String, String>? headers}) async {
     try {
       print("$baseUrl$path&apiKey=$apiKey");
-      final response = await http.get(Uri.parse('$baseUrl$path&apiKey=$apiKey'),
-          headers: headers);
+      dynamic response = await http
+          .get(Uri.parse('$baseUrl$path&apiKey=$apiKey'), headers: headers);
 
       if (response.statusCode == 200) {
         print(response.body);
         return jsonDecode(response.body);
       } else {
-        throw Exception('Failed to load data: ${response.statusCode}');
+        var decodedJson = jsonDecode(response.body);
+        throw Exception('Failed to load data: ${decodedJson["code"]}');
       }
     } catch (e) {
+      if (e.toString().contains("rateLimited")) {
+        apiKey = alterNateApiKey;
+      }
       throw Exception('Failed to make the GET request: $e');
     }
   }

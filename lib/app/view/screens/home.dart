@@ -21,11 +21,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //   final viewmodel = context.read<NewsViewModel>();
-    //   viewmodel.fetchHeadLine("in", viewmodel.category[0].toLowerCase());
-    //   viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase());
-    // });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final viewmodel = context.read<NewsViewModel>();
+      if (viewmodel.error.contains("rateLimited")) {
+        refresh();
+      }
+    });
+  }
+
+  void refresh() {
+    final viewmodel = context.read<NewsViewModel>();
+    viewmodel.fetchHeadLine("in", viewmodel.category[0].toLowerCase(), context);
+    viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase(), context);
   }
 
   @override
@@ -33,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final newsRead = context.read<NewsViewModel>();
     final newsWatch = context.watch<NewsViewModel>();
     return Scaffold(
-      backgroundColor: AppColor.yellow,
       appBar: const CustomAppBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -45,19 +51,19 @@ class _HomeScreenState extends State<HomeScreen> {
             const Vspace(
               height: 20,
             ),
-            newsWatch.isLoading
-                ? SizedBox(
-                    height: MediaQuery.of(context).size.height / 2,
-                    child: const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  )
-                : const HeadLine(),
-            newsWatch.isLoading ? const SizedBox() : const PopularNews()
+            if (newsWatch.isLoading)
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 2,
+                child: const Center(
+                  child: CircularProgressIndicator(),
+                ),
+              )
+            else
+              const HeadLine(),
+            if (newsWatch.isLoading) const SizedBox() else const PopularNews()
           ],
         ),
       ),
     );
   }
 }
-

@@ -30,6 +30,7 @@ class _InAppWebState extends State<InAppWeb> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColor.yellow,
         title: Text(
           "NEWS",
           style: AppStyle.blackBold24,

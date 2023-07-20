@@ -33,8 +33,9 @@ class NewsCategory extends StatelessWidget {
             onTap: () {
               newsRead.setSelectedNewsCategoryIndex(index);
               newsRead.fetchHeadLine(
-                  "in", newsRead.category[index].toLowerCase());
-              newsRead.fetchEveryThing(newsRead.category[index].toLowerCase());
+                  "in", newsRead.category[index].toLowerCase(), context);
+              newsRead.fetchEveryThing(
+                  newsRead.category[index].toLowerCase(), context);
             },
             child: Center(
               child: Text(

@@ -27,8 +27,9 @@ class _SplashScreenState extends State<SplashScreen> {
     // Wait for 2 seconds using Future.delayed
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final viewmodel = context.read<NewsViewModel>();
-      await viewmodel.fetchHeadLine("in", viewmodel.category[0].toLowerCase());
-      viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase());
+      await viewmodel.fetchHeadLine(
+          "in", viewmodel.category[0].toLowerCase(), context);
+      viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase(), context);
     });
     await Future.delayed(const Duration(seconds: 3));
 
@@ -38,7 +39,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.yellow,
       body: SizedBox(
         height: double.infinity,
         width: double.infinity,
@@ -48,11 +48,11 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Lottie.asset('assets/lottie/loading.json',
                 width: MediaQuery.of(context).size.width / 2),
-            Vspace(
+            const Vspace(
               height: 15,
             ),
             Text(
-              "Loading...",
+              "Loading",
               style: AppStyle.blackBold24,
             ),
           ],

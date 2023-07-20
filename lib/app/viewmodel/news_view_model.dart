@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/global/utils/custom_snackbar.dart';
 
 import '../../global/network/api_client.dart';
 import '../model/news_model.dart';
@@ -26,7 +27,8 @@ class NewsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> fetchHeadLine(String country, String category) async {
+  Future<bool> fetchHeadLine(
+      String country, String category, BuildContext context) async {
     try {
       isLoading = true;
       notifyListeners();
@@ -38,13 +40,17 @@ class NewsViewModel extends ChangeNotifier {
       notifyListeners();
       return true;
     } catch (e) {
+      isLoading = false;
       error = e.toString();
+      showErrorSnackBar(context, error);
+      showSuccessSnackBar(
+          context, "Switiching to alternate Key For Temporary Use");
       notifyListeners();
       return false;
     }
   }
 
-  void fetchEveryThing(String category) async {
+  void fetchEveryThing(String category, BuildContext context) async {
     try {
       isPopularNewsLoading = true;
       notifyListeners();
@@ -63,6 +69,7 @@ class NewsViewModel extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       error = e.toString();
+      showErrorSnackBar(context, error);
       notifyListeners();
     }
   }
