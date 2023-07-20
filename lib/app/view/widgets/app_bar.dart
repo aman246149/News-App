@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../global/theme/app_color.dart';
 import '../../../global/theme/text_theme.dart';
-import '../../../global/widgets/hspace.dart';
+import '../screens/search.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -17,11 +17,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: AppStyle.blackBold24,
       ),
       backgroundColor: AppColor.yellow,
-      actions: const [
-        Icon(Icons.menu),
-        Hspace(
-          width: 20,
-        )
+      actions: [
+        IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SearchScreen(),
+                  ));
+            },
+            icon: const Icon(Icons.search)),
       ],
     );
   }

@@ -47,7 +47,7 @@ class NewsViewModel extends ChangeNotifier {
       isPopularNewsLoading = true;
       notifyListeners();
       DateTime now = DateTime.now();
-      DateTime oneMonthAgo = now.subtract(Duration(days: 30));
+      DateTime oneMonthAgo = now.subtract(const Duration(days: 30));
 
       String formattedFrom =
           DateFormat("yyyy-MM-ddTHH:mm:ss").format(oneMonthAgo);
