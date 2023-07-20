@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/app/view/screens/home.dart';
 import 'package:newsapp/app/view/screens/search.dart';
 
 class RouteGenerator {
@@ -7,11 +8,15 @@ class RouteGenerator {
       case '/search':
         return scaleTransitionPageBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              SearchScreen(),
+              const SearchScreen(),
+        );
+      case '/home':
+        return scaleTransitionPageBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => const HomeScreen(),
         );
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(
+          builder: (context) => const Scaffold(
             body: Center(
               child: Text("404 No Page Found"),
             ),
@@ -26,7 +31,7 @@ PageRouteBuilder scaleTransitionPageBuilder({
       pageBuilder,
 }) {
   return PageRouteBuilder(
-    transitionDuration: Duration(milliseconds: 500),
+    transitionDuration: const Duration(milliseconds: 500),
     pageBuilder: pageBuilder,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       var begin = 0.8;

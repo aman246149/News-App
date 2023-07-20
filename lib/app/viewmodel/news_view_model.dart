@@ -26,7 +26,7 @@ class NewsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void fetchHeadLine(String country, String category) async {
+  Future<bool> fetchHeadLine(String country, String category) async {
     try {
       isLoading = true;
       notifyListeners();
@@ -36,9 +36,11 @@ class NewsViewModel extends ChangeNotifier {
       newsModel = list.map((e) => NewsModel.fromJson(e)).toList();
       isLoading = false;
       notifyListeners();
+      return true;
     } catch (e) {
       error = e.toString();
       notifyListeners();
+      return false;
     }
   }
 

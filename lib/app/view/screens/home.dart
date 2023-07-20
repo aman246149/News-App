@@ -21,11 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final viewmodel = context.read<NewsViewModel>();
-      viewmodel.fetchHeadLine("in", viewmodel.category[0].toLowerCase());
-      viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase());
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   final viewmodel = context.read<NewsViewModel>();
+    //   viewmodel.fetchHeadLine("in", viewmodel.category[0].toLowerCase());
+    //   viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase());
+    // });
   }
 
   @override

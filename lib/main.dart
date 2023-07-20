@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/app/view/screens/home.dart';
+import 'package:newsapp/app/view/screens/splash_screen.dart';
 import 'package:newsapp/app/viewmodel/news_view_model.dart';
 import 'package:newsapp/global/theme/app_color.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(useMaterial3: true, primaryColor: AppColor.yellow),
-        home: const HomeScreen(),
+        home: const SplashScreen(),
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );
