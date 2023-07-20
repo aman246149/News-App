@@ -4,7 +4,6 @@ import 'package:newsapp/app/viewmodel/news_view_model.dart';
 import 'package:newsapp/global/widgets/vspace.dart';
 import 'package:provider/provider.dart';
 
-import '../../../global/theme/app_color.dart';
 import '../../../global/widgets/divider.dart';
 import '../widgets/headline.dart';
 import '../widgets/news_Category.dart';

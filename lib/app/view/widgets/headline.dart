@@ -31,7 +31,8 @@ class HeadLine extends StatelessWidget {
                 children: newsWatch.newsModel!.map((e) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
+                    child: 
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -143,6 +144,7 @@ class HeadLine extends StatelessWidget {
                         const AppDivider(),
                       ],
                     ),
+                  
                   );
                 }).toList()));
   }

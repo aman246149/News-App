@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/app/model/news_model.dart';
 import 'package:newsapp/app/view/screens/home.dart';
+import 'package:newsapp/app/view/screens/news_details.dart';
 import 'package:newsapp/app/view/screens/search.dart';
 
 class RouteGenerator {
@@ -13,6 +15,10 @@ class RouteGenerator {
       case '/home':
         return scaleTransitionPageBuilder(
           pageBuilder: (context, animation, secondaryAnimation) => const HomeScreen(),
+        );
+      case '/newsDetails':
+        return scaleTransitionPageBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>  NewsDetails(newsModel: settings.arguments as NewsModel),
         );
       default:
         return MaterialPageRoute(

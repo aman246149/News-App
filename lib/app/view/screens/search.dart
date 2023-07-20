@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:newsapp/app/view/widgets/popular_news_widget.dart';
 import 'package:newsapp/app/viewmodel/news_view_model.dart';
-import 'package:newsapp/global/theme/app_color.dart';
 import 'package:newsapp/global/theme/text_theme.dart';
 import 'package:newsapp/global/widgets/vspace.dart';
 import 'package:provider/provider.dart';

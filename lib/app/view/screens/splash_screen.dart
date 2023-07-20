@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:newsapp/global/theme/app_color.dart';
 import 'package:newsapp/global/theme/text_theme.dart';
 import 'package:newsapp/global/widgets/vspace.dart';
 import 'package:provider/provider.dart';
