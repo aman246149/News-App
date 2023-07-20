@@ -20,11 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SearchScreen(),
-                  ));
+              Navigator.pushNamed(context, '/search');
             },
             icon: const Icon(Icons.search)),
       ],

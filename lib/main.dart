@@ -4,6 +4,8 @@ import 'package:newsapp/app/viewmodel/news_view_model.dart';
 import 'package:newsapp/global/theme/app_color.dart';
 import 'package:provider/provider.dart';
 
+import 'global/routing/route.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -20,8 +22,10 @@ class MainApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(useMaterial3: true, primaryColor: AppColor.yellow),
         home: const HomeScreen(),
+        onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );
   }
