@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:newsapp/global/theme/app_color.dart';
@@ -59,7 +58,7 @@ class _InAppWebState extends State<InAppWeb> {
             },
           ),
           progress < 1.0
-              ? ShimmerWidget(
+              ? const ShimmerWidget(
                   height: double.infinity,
                   width: double.infinity,
                 )

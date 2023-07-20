@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../../global/theme/app_color.dart';
 import '../../../global/theme/text_theme.dart';
@@ -33,6 +32,7 @@ class NewsCategory extends StatelessWidget {
               newsRead.setSelectedNewsCategoryIndex(index);
               newsRead.fetchHeadLine(
                   "in", newsRead.category[index].toLowerCase());
+              newsRead.fetchEveryThing(newsRead.category[index].toLowerCase());
             },
             child: Center(
               child: Text(

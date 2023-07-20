@@ -1,10 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:newsapp/app/viewmodel/news_view_model.dart';
 import 'package:newsapp/global/utils/time_ago.dart';
 import 'package:provider/provider.dart';
-import 'package:shimmer/shimmer.dart';
 
 import '../../../global/theme/app_color.dart';
 import '../../../global/theme/text_theme.dart';
@@ -66,9 +64,9 @@ class HeadLine extends StatelessWidget {
                                   imageUrl: e.urlToImage ?? "",
                                   fit: BoxFit.cover,
                                   placeholder: (context, url) =>
-                                      ShimmerWidget(),
+                                      const ShimmerWidget(),
                                   errorWidget: (context, url, error) =>
-                                      ShimmerWidget(),
+                                      const ShimmerWidget(),
                                 ),
                               ),
                             ),
@@ -79,13 +77,6 @@ class HeadLine extends StatelessWidget {
                                   border: Border.all(color: AppColor.black)),
                             ),
 
-                            // ShimmerWidget(
-                            //   child: Container(
-                            //     height: 200,
-                            //     width: double.infinity,
-                            //     color: Colors.white,
-                            //   ),
-                            // )
                           ],
                         ),
                         const Vspace(
@@ -129,17 +120,17 @@ class HeadLine extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Icon(Icons.favorite_border),
-                            Hspace(
+                            const Icon(Icons.favorite_border),
+                            const Hspace(
                               width: 20,
                             ),
-                            Icon(Icons.volume_up),
-                            Expanded(
+                            const Icon(Icons.volume_up),
+                            const Expanded(
                                 child: SizedBox(
                                     width:
                                         0)), // This is similar to Hspace(width: 0)
-                            Icon(Icons.access_time_outlined),
-                            Hspace(
+                            const Icon(Icons.access_time_outlined),
+                            const Hspace(
                               width: 5,
                             ),
                             Text(formatTimeAgo(
