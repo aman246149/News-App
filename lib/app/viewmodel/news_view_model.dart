@@ -46,6 +46,7 @@ class NewsViewModel extends ChangeNotifier {
       showSuccessSnackBar(
           context, "Switiching to alternate Key For Temporary Use");
       notifyListeners();
+
       return false;
     }
   }
@@ -70,6 +71,7 @@ class NewsViewModel extends ChangeNotifier {
     } catch (e) {
       error = e.toString();
       showErrorSnackBar(context, error);
+
       notifyListeners();
     }
   }

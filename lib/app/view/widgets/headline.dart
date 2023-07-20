@@ -25,7 +25,7 @@ class HeadLine extends StatelessWidget {
         : Container(
             constraints: BoxConstraints(
                 maxHeight: MediaQuery.of(context).size.height -
-                    MediaQuery.of(context).size.height / 4),
+                    MediaQuery.of(context).size.height / 3),
             width: double.infinity,
             child: PageView(
                 pageSnapping: true,
