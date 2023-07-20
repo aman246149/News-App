@@ -2,19 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerWidget extends StatelessWidget {
-  final Widget child;
+
 
   const ShimmerWidget({
     super.key,
-    required this.child,
+
+    this.height=200,
+    this.width=double.infinity
   });
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       baseColor: Colors.grey[300]!,
       highlightColor: Colors.grey[100]!,
-      child: child,
+      child: Container(
+        height: height,
+        width: width,
+        color: Colors.white,
+      ),
     );
   }
 }

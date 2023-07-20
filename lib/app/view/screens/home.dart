@@ -35,30 +35,29 @@ class _HomeScreenState extends State<HomeScreen> {
     final newsRead = context.read<NewsViewModel>();
     final newsWatch = context.watch<NewsViewModel>();
     return Scaffold(
-      backgroundColor: AppColor.purple,
+      backgroundColor: AppColor.yellow,
       appBar: const CustomAppBar(),
-      body: newsWatch.isLoading
-          ? ShimmerWidget(
-              child: Container(
-              height: double.infinity,
-              width: double.infinity,
-              color: Colors.white,
-            ))
-          : SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const AppDivider(),
-                  NewsCategory(newsWatch: newsWatch, newsRead: newsRead),
-                  const AppDivider(),
-                  const Vspace(
-                    height: 20,
-                  ),
-                  const HeadLine(),
-                  const AppDivider(),
-                ],
-              ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const AppDivider(),
+            NewsCategory(newsWatch: newsWatch, newsRead: newsRead),
+            const AppDivider(),
+            const Vspace(
+              height: 20,
             ),
+            newsWatch.isLoading
+                ? SizedBox(
+                    height: MediaQuery.of(context).size.height / 2,
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  )
+                : const HeadLine(),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -36,16 +36,16 @@ class _InAppWebState extends State<InAppWeb> {
           style: AppStyle.blackBold24,
         ),
       ),
-      backgroundColor: AppColor.purple,
+      backgroundColor: AppColor.yellow,
       body: Stack(
         children: [
           InAppWebView(
             initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
             onLoadStart: (controller, url) {
-              log("ON WEB URL LOAD", name: url.toString(), level: 4);
+              // log("ON WEB URL LOAD", name: url.toString(), level: 4);
 
-              //! Redirection for investment document
-              if (url.toString().contains("Signature/Signed-Complete")) {}
+              // //! Redirection for investment document
+              // if ()) {}
             },
             onProgressChanged: (controller, progress) {
               setState(() {
@@ -60,11 +60,9 @@ class _InAppWebState extends State<InAppWeb> {
           ),
           progress < 1.0
               ? ShimmerWidget(
-                  child: Container(
                   height: double.infinity,
                   width: double.infinity,
-                  color: Colors.white,
-                ))
+                )
               : const SizedBox.shrink(),
           error.isNotEmpty
               ? Center(
