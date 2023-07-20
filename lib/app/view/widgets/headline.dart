@@ -24,15 +24,15 @@ class HeadLine extends StatelessWidget {
         ? const SizedBox()
         : Container(
             constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height - 290),
+                maxHeight: MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).size.height / 4),
             width: double.infinity,
             child: PageView(
                 pageSnapping: true,
                 children: newsWatch.newsModel!.map((e) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: 
-                    Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -77,7 +77,6 @@ class HeadLine extends StatelessWidget {
                               decoration: BoxDecoration(
                                   border: Border.all(color: AppColor.black)),
                             ),
-
                           ],
                         ),
                         const Vspace(
@@ -144,7 +143,6 @@ class HeadLine extends StatelessWidget {
                         const AppDivider(),
                       ],
                     ),
-                  
                   );
                 }).toList()));
   }

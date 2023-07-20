@@ -50,7 +50,7 @@ class NewsViewModel extends ChangeNotifier {
     }
   }
 
-  void fetchEveryThing(String category, BuildContext context) async {
+  Future<void> fetchEveryThing(String category, BuildContext context) async {
     try {
       isPopularNewsLoading = true;
       notifyListeners();

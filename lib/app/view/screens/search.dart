@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:newsapp/app/view/widgets/popular_news_widget.dart';
 import 'package:newsapp/app/viewmodel/news_view_model.dart';
+import 'package:newsapp/global/theme/app_color.dart';
 import 'package:newsapp/global/theme/text_theme.dart';
 import 'package:newsapp/global/widgets/vspace.dart';
 import 'package:provider/provider.dart';
@@ -20,8 +21,11 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        backgroundColor: AppColor.yellow,
+        bottomOpacity: 0.0,
+        elevation: 0.0,
+     
+        scrolledUnderElevation: 0,
         title: Text(
           "Search News",
           style: AppStyle.blackBold24,

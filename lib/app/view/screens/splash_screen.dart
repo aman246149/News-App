@@ -28,11 +28,11 @@ class _SplashScreenState extends State<SplashScreen> {
       final viewmodel = context.read<NewsViewModel>();
       await viewmodel.fetchHeadLine(
           "in", viewmodel.category[0].toLowerCase(), context);
-      viewmodel.fetchEveryThing(viewmodel.category[0].toLowerCase(), context);
+      await viewmodel.fetchEveryThing(
+          viewmodel.category[0].toLowerCase(), context);
+      Navigator.pushReplacementNamed(context, '/home');
     });
-    await Future.delayed(const Duration(seconds: 3));
 
-    Navigator.pushReplacementNamed(context, '/home');
   }
 
   @override
