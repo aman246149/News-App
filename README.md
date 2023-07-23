@@ -1,6 +1,8 @@
-# newsapp
+# ThankYou For The Opportunity...
 
 # News Portal App Readme
+
+Video Link https://drive.google.com/file/d/1FNYAtmBcUVy_R24QcbU3EZmTouR9_sVC/view?usp=sharing
 
 This repository contains a Flutter application that fetches the latest news using an API and displays them in reverse chronological order, sorted by date. The application is designed to be responsive, catering to both mobile phones and desktops. It also includes additional features such as a search functionality, a splash screen with a fading animation, and custom-designed UI elements inspired by the reference design from [Dribbble](https://dribbble.com/shots/20160174-News-Portal-Mobile-App).
 
