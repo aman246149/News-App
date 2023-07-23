@@ -17,6 +17,7 @@ dependencies:
   flutter_inappwebview: ^5.7.2+3
   cached_network_image: ^3.2.3
   lottie: ^2.3.2
+  expandable_page_view: ^1.0.17
 
 
 
